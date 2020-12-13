@@ -1,0 +1,39 @@
+/* STAR RATING */
+
+#location-rating {
+    margin-top: 2%;
+}
+input[type="radio"] {
+    display: none;
+}
+.star {
+    cursor: pointer;
+    transition: color 150ms;
+}
+
+/* COORDINATE SELECTION */
+
+#location-coordinates, #location-coordinates-active {
+    height: 3em;
+    width: 100%;
+    margin-top: 2%;
+    border-radius: 20px;
+    border: 1px solid rgb(80, 80, 80);
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.233);
+    white-space: pre-wrap;
+    cursor: pointer;
+}
+#location-coordinates {
+    background-color: #ffffff;
+}
+#location-coordinates:hover {
+    background-color: #f3f3f3;
+}
+#location-coordinates-active {
+    background-color: #ff5d5d;
+    color: #ffffff;
+}
+#location-coordinates-active:hover {
+    background-color: #e74d4d;
+}
+

@@ -1,0 +1,106 @@
+/* COORDINATE SELECTION */
+
+#search-coordinates-left, #search-coordinates-right, 
+#search-coordinates-left-active {
+    height: 3em;
+    width: 50%;
+    margin-top: 2%;
+    border-radius: 20px;
+    border: 1px solid rgb(80, 80, 80);
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.233);
+    white-space: pre-wrap;
+    cursor: pointer;
+}
+#search-coordinates-left, #search-coordinates-left-active {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+}
+#search-coordinates-right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#search-coordinates-left, #search-coordinates-right {
+    background-color: #ffffff;
+}
+#search-coordinates-left:hover, #search-coordinates-right:hover {
+    background-color: #f3f3f3;
+}
+#search-coordinates-right:hover {
+    transition: 150ms ease-in-out;
+}
+#search-coordinates-right:active {
+    background-color: #dfdfdf;
+}
+#search-coordinates-left-active {
+    background-color: #ff5d5d;
+    color: #ffffff;
+}
+#search-coordinates-left-active:hover, #search-coordinates-right-active:hover {
+    background-color: #e74d4d;
+}
+
+#search-menu > section > p {
+    padding-left: 1%;
+    margin-bottom: 0;
+    margin-top: 3%;
+}
+
+
+/* DISTANCE SELECTION */
+
+#search-distance {
+    height: 20%;
+}
+
+/* inputs */
+#search-distance-left, #search-distance-right {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    padding-left: 0;
+    padding-right: 5px;
+    box-shadow: none;
+    font-size: 120%;
+    font-family: SFPro;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    text-align: right;
+    transition: 0ms ease-in-out;
+}
+#search-distance-left {
+    width: 20%;
+    min-width: 2em;
+}
+#search-distance-right {
+    width: 20%;
+    min-width: 2em;
+}
+#search-distance-left:hover, #search-distance-right:hover {
+    border-bottom: 2px solid rgb(40, 40, 40);
+}
+#search-distance-left:focus, #search-distance-right:focus {
+    border-bottom: 2px solid rgb(40, 40, 40);
+    outline: none;
+}
+
+#search-distance > p {
+    margin: 0;
+    margin-bottom: 1px;
+    font-size: 120%;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: none;
+    text-shadow: none;
+    user-select: none;
+    padding-top: 2%;
+}
+.search-distance-error {
+    color: #ff4242;
+    border-bottom: 1px solid #ff4242 !important;
+}
+.search-distance-error:hover {
+    color: #ee3939;
+    border-bottom: 2px solid #ee3939 !important;
+}

@@ -1,4 +1,4 @@
-/secrets
+#/secrets
 /certs
 /server/node_modules
 /.git
