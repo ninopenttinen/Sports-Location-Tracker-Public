@@ -1,0 +1,5 @@
+./server/node_modules
+./server/npm-debug.log
+./react-app/node_modules
+./react-app/build
+./react-app/.git

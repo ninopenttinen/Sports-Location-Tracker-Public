@@ -1,0 +1,86 @@
+version: '3'
+services:
+
+    webapp:
+        container_name: webapp
+        restart: always
+        build:
+            context: ./
+            dockerfile: .dockerfiles/webapp.Dockerfile
+        ports:
+            - '80:80'
+        secrets:
+            - google_maps_api_key
+        depends_on:
+            - server
+            - adminer
+        networks:
+            - frontend
+
+    server:
+        container_name: node_server
+        hostname: node_server
+        restart: always
+        build:
+            context: ./
+            dockerfile: .dockerfiles/server.Dockerfile
+            args:
+                NODE_ENV: production
+        ports:
+            - '9000:9000'
+        secrets:
+            - db_user
+            - db_user_pw
+        depends_on:
+            - postgres
+        networks:
+            - backend
+            - frontend
+
+    postgres:
+        container_name: postgres
+        restart: always
+        build:
+            context: ./
+            dockerfile: .dockerfiles/db.Dockerfile
+        environment:
+            POSTGRES_DB: sports_location_tracker
+            POSTGRES_USER_FILE: /run/secrets/db_user
+            POSTGRES_PASSWORD_FILE: /run/secrets/db_user_pw
+        networks:
+            - backend
+        ports:
+            - '5432:5432'
+        secrets:
+            - db_user
+            - db_user_pw
+        volumes:
+            - db-data:/var/lib/postgresql/data
+
+    adminer:
+        container_name: adminer
+        hostname: adminer
+        image: adminer:4.7.7
+        restart: always
+        ports:
+            - '8080:8080'
+        depends_on:
+            - postgres
+        networks:
+            - backend
+            - frontend
+
+networks:
+    frontend:
+    backend:
+
+volumes:
+    db-data:
+
+secrets:
+    db_user:
+        file: ./secrets/db_user
+    db_user_pw:
+        file: ./secrets/db_user_pw
+    google_maps_api_key:
+        file: ./secrets/google_maps_api_key
