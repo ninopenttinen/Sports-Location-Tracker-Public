@@ -95,11 +95,12 @@ td {
 
 
 .delete-btn {
+    max-width: 70px;
+    margin-left: 2%;
     background-color: #ff5d5d;
     color: white;
     border-radius: 5px;
     border: 1px solid black;
-
 }
 .delete-btn:hover {
     background-color: #ff4444;

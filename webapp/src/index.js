@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './add_components.css';
-import './search_components.css';
-import './results_display.css';
-import './pop_up_window.css';
+import './css/index.css';
+import './css/add_components.css';
+import './css/search_components.css';
+import './css/results_display.css';
+import './css/pop_up_window.css';
 import App from './App';
 
 /*

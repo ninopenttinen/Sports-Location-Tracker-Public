@@ -13,7 +13,8 @@
     display: inline-block;
     position: absolute;
     top: 40%;
-    bottom: 50%;
+    height: 7%;
+    min-height: 70px;
     left: 42%;
     right: 42%;
     padding: 0.1%;

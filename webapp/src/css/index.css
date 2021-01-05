@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'SFPro'; 
-  src: url('fonts/SFProDisplay-Medium.woff2') format('woff');
-  src: url('fonts/SFProDisplay-Medium.woff') format('woff2');
+  src: url('./../fonts/SFProDisplay-Medium.woff2') format('woff');
+  src: url('./../fonts/SFProDisplay-Medium.woff') format('woff2');
 }
 @font-face {
   font-family: 'SFPro-light'; 
-  src: url('fonts/SFProDisplay-Light.woff2') format('woff');
-  src: url('fonts/SFProDisplay-Light.woff') format('woff2');
+  src: url('./../fonts/SFProDisplay-Light.woff2') format('woff');
+  src: url('./../fonts/SFProDisplay-Light.woff') format('woff2');
 }
 
 
@@ -35,7 +35,7 @@ html, body {
   max-height: 100%;
   display: grid;
   grid-template-rows: 50px 1fr;
-  grid-template-columns: 0.35fr 1fr;
+  grid-template-columns: min-content auto;
 }
 
 /* HEADER */
@@ -79,7 +79,8 @@ header > .active-btn {
   overflow-y: auto;
   height: 100%;
   max-height: 100%;
-  width: 100%;
+  width: 30vw;
+  max-width: 600px;
   border-right: 1px solid  rgb(56, 56, 56);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.233);
   background: rgb(242,242,242);

@@ -21,11 +21,12 @@ export class App extends Component {
         distance: 0,
         data: [],
         selectedLocation: null,
+        selectedLocationName: null,
         enableMapCentering: true,
         loading: false,
         popUp: false
     }
-
+    
     constructor(props) {
         super(props);
         
@@ -121,6 +122,7 @@ export class App extends Component {
         if (this.state.selectedLocation !== location.location_id)
             this.setState({ 
                 selectedLocation: location.location_id,
+                selectedLocationName: location.location,
                 currentLatitude: location.latitude,
                 currentLongitude: location.longitude
              })
@@ -175,7 +177,7 @@ export class App extends Component {
 
     render() {
         const { view, selectingFromMap, currentLatitude, currentLongitude, addViewLatitude, addViewLongitude, searchViewLatitude, searchViewLongitude, 
-                selectedLocation, distance, data, enableMapCentering, loading, popUp } = this.state;
+                selectedLocation, selectedLocationName, distance, data, enableMapCentering, loading, popUp } = this.state;
         const { handleViewChange, startMapSelection, onMapClick, resetCoordinates, resetDistance, setDistance, saveResults,
                 setSearchCoordinatesToCurrent, handleLocationSelection, focusOnMarker, handleCheckboxChange, handleDelete, showPopUp } = this;
         let menu;
@@ -248,7 +250,7 @@ export class App extends Component {
                     <PopUpWindow
                         handleDelete={handleDelete}
                         showPopUp={showPopUp}
-                        selectedLocation={selectedLocation}
+                        selectedLocationName={selectedLocationName}
                     />
                     : null
                 }
