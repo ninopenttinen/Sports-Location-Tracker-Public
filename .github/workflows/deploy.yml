@@ -3,7 +3,7 @@ on: workflow_dispatch
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout to CICD repo
         uses: actions/checkout@v3
