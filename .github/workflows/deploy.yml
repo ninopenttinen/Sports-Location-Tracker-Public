@@ -1,0 +1,21 @@
+name: Deploy
+on: workflow_dispatch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout to CICD repo
+        uses: actions/checkout@v3
+        with:
+          repository: 5G00BD88-3006-Innovaatioprojekti/Innovaatioprojekti-CI-CD
+          ref: main
+          ssh-key: ${{ secrets.CICD_DEPLOY_KEY }}
+          path: .github/actions # where to place the repository that we checkout to
+
+      - name: Run build action
+        uses: project-specific-actions/build-sports-location-tracker
+        with:
+          google-maps-api-key: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+          postgres-user: ${{ secrets.POSTGRES_USER }}
+          postgres-password: ${{ secrets.POSTGRES_PASSWORD }}
