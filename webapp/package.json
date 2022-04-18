@@ -2,7 +2,7 @@
   "name": "webapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://172.16.101.74/stg/sports-location-tracker",
+  "homepage": "/stg/sports-location-tracker",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
