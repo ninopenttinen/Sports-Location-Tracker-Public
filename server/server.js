@@ -33,6 +33,8 @@ const pool = new Pool({
 
 const basepath = process.env.BASEPATH
 
+console.log('basepath: ', process.env.BASEPATH)
+
 // set message for API root
 app.get(basepath + '/api', (req, res) => {
   res.json({ info: 'API root' })
