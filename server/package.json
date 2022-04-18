@@ -5,7 +5,6 @@
   "main": "server.js",
   "author": "Nino Penttinen",
   "license": "ISC",
-  "homepage": "http://172.16.101.74/stg/sports-location-tracker",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
