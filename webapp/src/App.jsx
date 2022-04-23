@@ -150,7 +150,7 @@ export class App extends Component {
     this.setState({ loading: true }, () => {
       axios
         .post(
-          `http://localhost:9000${process.env.BASEPATH}/api/locations/delete`,
+          `${process.env.BASEPATH}/api/locations/delete`,
           {
             id: selectedLocation,
           }

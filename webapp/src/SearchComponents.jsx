@@ -139,7 +139,7 @@ export class SearchMenu extends Component {
         () => {
           axios
             .get(
-              `http://localhost:9000${
+              `${
                 process.env.BASEPATH
               }/api/locations?type=${searchType}&latitude=${latitude}&longitude=${longitude}&distance=${
                 parseInt(searchDistanceKm) * 1000 + parseInt(searchDistanceM)

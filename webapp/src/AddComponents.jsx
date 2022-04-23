@@ -169,7 +169,7 @@ export class AddMenu extends Component {
         () => {
           axios
             .post(
-              `http://localhost:9000${process.env.BASEPATH}/api/locations`,
+              `${process.env.BASEPATH}/api/locations`,
               {
                 location: locationName,
                 type: locationType,
