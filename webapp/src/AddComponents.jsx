@@ -168,17 +168,14 @@ export class AddMenu extends Component {
         },
         () => {
           axios
-            .post(
-              `${process.env.BASEPATH}/api/locations`,
-              {
-                location: locationName,
-                type: locationType,
-                description: locationDescription,
-                rating: locationRating,
-                latitude: latitude,
-                longitude: longitude,
-              }
-            )
+            .post(`/api/locations`, {
+              location: locationName,
+              type: locationType,
+              description: locationDescription,
+              rating: locationRating,
+              latitude: latitude,
+              longitude: longitude,
+            })
             .then((res) => {
               this.setState({
                 loading: false,

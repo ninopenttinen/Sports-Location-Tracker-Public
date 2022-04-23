@@ -149,12 +149,9 @@ export class App extends Component {
 
     this.setState({ loading: true }, () => {
       axios
-        .post(
-          `${process.env.BASEPATH}/api/locations/delete`,
-          {
-            id: selectedLocation,
-          }
-        )
+        .post(`/api/locations/delete`, {
+          id: selectedLocation,
+        })
         .then((res) =>
           this.setState({
             data: data.filter((data) => selectedLocation !== data.location_id),
