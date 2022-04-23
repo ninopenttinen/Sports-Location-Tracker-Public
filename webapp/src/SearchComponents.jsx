@@ -137,6 +137,7 @@ export class SearchMenu extends Component {
           statusMsg: 2, // Set status message to 2 - which means "searching the database"
         },
         () => {
+          console.log('Send request with basepath: ' + process.env.BASEPATH)
           axios
             .get(
               `${

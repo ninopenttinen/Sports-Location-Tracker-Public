@@ -44,6 +44,7 @@ app.get(basepath + '/api', (req, res) => {
 app.get(basepath + '/api/locations', async (req, res) => {
   let { type, latitude, longitude, distance } = req.query
 
+  console.log('Search the db')
   // Validate the request params
   if (
     type.length > 50 ||
