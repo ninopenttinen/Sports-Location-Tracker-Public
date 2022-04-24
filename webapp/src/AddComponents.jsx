@@ -6,7 +6,7 @@ import {
   IoCheckmarkCircle,
   IoTime,
 } from 'react-icons/io5'
-const axios = require('axios')
+import axios from './utility/axios'
 
 export class AddMenu extends Component {
   state = {
@@ -168,7 +168,7 @@ export class AddMenu extends Component {
         },
         () => {
           axios
-            .post(`/stg/sports-location-tracker/api/locations`, {
+            .post(`/api/locations`, {
               location: locationName,
               type: locationType,
               description: locationDescription,

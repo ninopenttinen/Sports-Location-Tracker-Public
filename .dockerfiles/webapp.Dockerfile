@@ -1,6 +1,12 @@
-FROM node:14.4 as build-deps
+FROM node:alpine as build-deps
 WORKDIR /usr/src/app
+
+ARG BASEPATH
+ENV REACT_APP_BASE_URL=$BASEPATH
+
 COPY ./webapp/package* ./
+# Replace word "BASEPATH" in package.json with environment variable
+RUN sed -i "s,BASEPATH,${REACT_APP_BASE_URL},g" package.json
 RUN npm install
 COPY ./webapp/public ./public
 COPY ./webapp/src ./src

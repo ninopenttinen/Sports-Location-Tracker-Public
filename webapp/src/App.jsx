@@ -4,7 +4,7 @@ import SearchMenu from './SearchComponents'
 import AddMenu from './AddComponents'
 import ResultsDisplay from './ResultsDisplay'
 import PopUpWindow from './PopUpWindow'
-const axios = require('axios')
+import axios from './utility/axios'
 
 export class App extends Component {
   state = {
@@ -149,7 +149,7 @@ export class App extends Component {
 
     this.setState({ loading: true }, () => {
       axios
-        .post(`/stg/sports-location-tracker/api/locations/delete`, {
+        .post(`/api/locations/delete`, {
           id: selectedLocation,
         })
         .then((res) =>

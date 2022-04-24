@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { IoWarning, IoAlertCircle, IoTime } from 'react-icons/io5'
-const axios = require('axios')
+import axios from './utility/axios'
 
 export class SearchMenu extends Component {
   state = {
@@ -139,7 +139,7 @@ export class SearchMenu extends Component {
         () => {
           axios
             .get(
-              `/stg/sports-location-tracker/api/locations?type=${searchType}&latitude=${latitude}&longitude=${longitude}&distance=${
+              `/api/locations?type=${searchType}&latitude=${latitude}&longitude=${longitude}&distance=${
                 parseInt(searchDistanceKm) * 1000 + parseInt(searchDistanceM)
               }`
             )
