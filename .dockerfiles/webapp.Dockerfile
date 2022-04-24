@@ -1,4 +1,4 @@
-FROM node:alpine as build-deps
+FROM node:14.4 as build-deps
 WORKDIR /usr/src/app
 
 ARG BASEPATH
