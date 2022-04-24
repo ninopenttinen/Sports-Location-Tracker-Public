@@ -139,7 +139,7 @@ export class SearchMenu extends Component {
         () => {
           axios
             .get(
-              `/api/locations?type=${searchType}&latitude=${latitude}&longitude=${longitude}&distance=${
+              `/stg/sports-location-tracker/api/locations?type=${searchType}&latitude=${latitude}&longitude=${longitude}&distance=${
                 parseInt(searchDistanceKm) * 1000 + parseInt(searchDistanceM)
               }`
             )

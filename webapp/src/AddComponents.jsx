@@ -168,7 +168,7 @@ export class AddMenu extends Component {
         },
         () => {
           axios
-            .post(`/api/locations`, {
+            .post(`/stg/sports-location-tracker/api/locations`, {
               location: locationName,
               type: locationType,
               description: locationDescription,

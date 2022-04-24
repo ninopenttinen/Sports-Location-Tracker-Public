@@ -149,7 +149,7 @@ export class App extends Component {
 
     this.setState({ loading: true }, () => {
       axios
-        .post(`/api/locations/delete`, {
+        .post(`/stg/sports-location-tracker/api/locations/delete`, {
           id: selectedLocation,
         })
         .then((res) =>

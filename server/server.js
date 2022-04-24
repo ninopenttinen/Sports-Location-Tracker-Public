@@ -31,17 +31,15 @@ const pool = new Pool({
 // API routes //
 ////////////////
 
-const basepath = process.env.BASEPATH
-
 console.log('basepath: ', process.env.BASEPATH)
 
 // set message for API root
-app.get(basepath + '/api', (req, res) => {
+app.get('/api', (req, res) => {
   res.json({ info: 'API root' })
 })
 
 // Search the db
-app.get(basepath + '/api/locations', async (req, res) => {
+app.get('/api/locations', async (req, res) => {
   let { type, latitude, longitude, distance } = req.query
 
   console.log('Search the db')
@@ -91,7 +89,7 @@ app.get(basepath + '/api/locations', async (req, res) => {
 })
 
 // Add new location
-app.post(basepath + '/api/locations', async (req, res) => {
+app.post('/api/locations', async (req, res) => {
   let { location, type, description, rating, latitude, longitude } = req.body
 
   // Validate the request params
@@ -129,7 +127,7 @@ app.post(basepath + '/api/locations', async (req, res) => {
 })
 
 // Delete location
-app.post(basepath + '/api/locations/delete', async (req, res) => {
+app.post('/api/locations/delete', async (req, res) => {
   let { id } = req.body
 
   try {
